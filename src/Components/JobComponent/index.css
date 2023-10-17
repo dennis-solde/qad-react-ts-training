@@ -1,0 +1,40 @@
+
+.post-component {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  margin-top: 15px;
+  padding-bottom: 20px;
+  
+  display: flex;
+  justify-content: space-between;
+}
+.post-component.deactivated h2,
+.post-component.deactivated p {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+
+span.view {
+  display: block;
+  cursor: pointer;
+}
+.job-details {
+  max-width: 600px;
+  margin: 15px auto;
+  text-align: left;
+}
+
+.job-details button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
