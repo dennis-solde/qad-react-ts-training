@@ -13,7 +13,7 @@ Install the following in your desktop
 ### 3. Clone repository
 ```
 # clone the repository
-$ git clone https://github.com/dennis-solde/qad-react-training.git
+$ git clone https://github.com/dennis-solde/qad-react-ts-training.git
 
 # go into app directory
 $ cd qad-react-training
@@ -25,6 +25,16 @@ $ npm i
 $ npm run start
 ```
 
+### Company API endpoints
+```
+  # For hands-on coding
+  GET: https://api-generator.retool.com/ewqf9T/data
+  GET by ID: https://api-generator.retool.com/ewqf9T/data/1
+  POST: https://api-generator.retool.com/ewqf9T/data
+  PUT: https://api-generator.retool.com/ewqf9T/data/1
+  PATCH: https://api-generator.retool.com/ewqf9T/data/1 
+  DELETE: https://api-generator.retool.com/ewqf9T/data/1 
+```
 
 
 ## Learn More

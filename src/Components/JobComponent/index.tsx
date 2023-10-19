@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import "./index.css"
-import { Link } from "react-router-dom";
 import { IJobsProps } from "../../api/fakedata";
 import ButtonComponent from "../Button";
 import { updateStatus } from "../../api";
@@ -22,10 +21,17 @@ const JobComponent = ({
   // },[data])
 
   // data handling
-  const handleUpdateStatus = async (payload: {
+  const handleUpdateStatus = async ({
+    id,
+    isActive
+  }: {
     id: number,
     isActive: boolean
   }) => {
+    const payload = {
+      id: id,
+      isActive: isActive
+    }
     const statusResponse = await updateStatus(payload);
     if(statusResponse) {
       setIsActive(statusResponse.isActive)
@@ -40,20 +46,13 @@ const JobComponent = ({
           <p>{data.company}</p>
         </div>
         
-          {/* State */}
-          {/* <ButtonComponent
-            isActive={isActive}
-            handleClick={() => {
-              setIsActive(!isActive)
-            }}
-            label={isActive ? "Active" : "Deactivated"} /> */}
-            
-          {/* Data */}
-          <span
-            onClick={() => showDetails(!details)}
-            className="view">View Details</span>
-          {/*  */}
+        <span
+          onClick={() => showDetails(!details)}
+          className="view">
+            {details ? "View Less" : 'View Details'}
+        </span>
       </div>
+
       {details &&
         <div className="job-details">
           <b>Description:</b>
@@ -62,13 +61,12 @@ const JobComponent = ({
           <ButtonComponent
             isActive={isActive}
             handleClick={() => {
-              const payloadData = {
+              handleUpdateStatus({
                 id: data.id,
                 isActive: !isActive
-              }
-              handleUpdateStatus(payloadData)
+              })
             }}
-            label={isActive ? "Active" : "Deactivated"} />
+            label={isActive ? "Deactivate?" : "Activate?"} />
         </div>
       }
     </>

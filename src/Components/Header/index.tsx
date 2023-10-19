@@ -7,11 +7,11 @@ const Header = () => {
   return (
     <ul className="nav">
       <li>
-      <Link to="/jobs">Jobs</Link>
+        <Link to="/">Dashboard</Link>
       </li>
-      {/* <li>
-        <Link to="/post/123">Post</Link>
-      </li> */}
+      <li>
+        <Link to="/jobs">Jobs</Link>
+      </li>
     </ul>
   )
 }

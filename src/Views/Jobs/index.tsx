@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import JobComponent from "../../Components/JobComponent";
-import { IJobsProps, jobsData } from "../../api/fakedata";
+import { IJobsProps } from "../../api/fakedata";
 import { getJobs } from "../../api";
 
 const Jobs = () => {
@@ -10,13 +10,16 @@ const Jobs = () => {
   const getData = async () => {
     // debugger;
     const data = await getJobs()
-    console.log(data,'data')
     setData(data)
   }
 
   useEffect(() => {
-    // setData(jobsData)
     getData()
+
+    return () => {
+      // clean up state
+      setData([])
+    };
   },[])
 
   return (
